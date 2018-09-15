@@ -18,9 +18,9 @@ class TestOrders(unittest.TestCase):
         # Tests the POST API endpoint that creates a new order
         data = {
 
-            "name": "eggcurry",
-            "price": 20,
-            "description": "sweet eggs"
+            "name": "Chicken",
+            "price": 500,
+            "description": "Smothered"
         }
 
         res = self.client.post(
@@ -82,5 +82,4 @@ class TestOrders(unittest.TestCase):
             headers={"content-type": "application/json"}
         )
         self.assertEqual(res.status_code, 404)
-        self.assertEqual(json.loads(res.data)[
-                         'message'], "Order not found!")
+        self.assertEqual(json.loads(res.data)['message'], "Order not found!")

@@ -14,6 +14,14 @@ class SpecificOrder(Resource):
 
         return {"message":"Order not found"}, 404
 
+    def put(self, id):
+        order = Order().get_by_id(id)
+
+        if order:
+            order.status="approved"
+            return {"message":"status approved"}
+        return {"message":"Order not found"}, 404
+
     # def delete(self, id):
     #     order = Order().get_by_id(id)
 
@@ -22,13 +30,7 @@ class SpecificOrder(Resource):
     #         return {"message":"order deleted successfully"},200
     #     return {"message":"Order not found"}, 404
 
-    # def put(self, id):
-    #     order = Order().get_by_id(id)
 
-    #     if order:
-    #         order.status="approved"
-    #         return {"message":"status approved"}
-    #     return {"message":"Order not found"}, 404
 
 class NewOrders(Resource):
 

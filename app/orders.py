@@ -30,14 +30,14 @@ from .models import Order, orders
 #             return {"message":"status approved"}
 #         return {"message":"Order not found"}, 404
 
-# class NewOrders(Resource):
+class NewOrders(Resource):
 
-#     def post(self):
-#         data = request.get_json()
-#         order = Order(data['name'], data["price"],data['description'])
-#         orders.append(order)
+    def post(self):
+        data = request.get_json()
+        order = Order(data['name'], data["price"],data['description'])
+        orders.append(order)
 
-#         return {"message":"Food order created"}, 201
+        return {"message":"Food order created"}, 201
 
 
 
